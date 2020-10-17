@@ -11,74 +11,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GridFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class GridFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    private GridView gridView;
-
-
-    public GridFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GridFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GridFragment newInstance(String param1, String param2) {
-        GridFragment fragment = new GridFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onAttach(Context context)
-    {
-        super.onAttach(context);
-
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-
-
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        String[] colourStr = new String[9];
+        colourStr[0] = "Red";
+        colourStr[1] = "Yellow";
+        colourStr[2] = "Cyan";
+        colourStr[3] = "Light Gray";
+        colourStr[4] = "Magenta";
+        colourStr[5] = "Silver";
+        colourStr[6] = "Blue";
+        colourStr[7] = "Green";
+        colourStr[8] = "Dark Gray";
 
+        int[] colourInt = new int[9];
 
-        return inflater.inflate(R.layout.fragment_grid, container, false);
+        colourInt[0] = Color.RED;
+        colourInt[1] = Color.YELLOW;
+        colourInt[2] = Color.CYAN;
+        colourInt[3] = Color.GRAY;
+        colourInt[4] = Color.MAGENTA;
+        colourInt[5] = Color.LTGRAY;
+        colourInt[6] = Color.BLUE;
+        colourInt[7] = Color.GREEN;
+        colourInt[8] = Color.DKGRAY;
+        View view = inflater.inflate(R.layout.fragment_grid, container, false);
+        GridView gridView = (GridView)view.findViewById(R.id.gridView);
+        final GridAdapter adapter = new GridAdapter(this.getContext(), colourStr, colourInt);
+        gridView.setAdapter(adapter);
 
-
-
-
+        return view;
     }
 }
