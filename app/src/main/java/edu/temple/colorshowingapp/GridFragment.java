@@ -1,34 +1,45 @@
 package edu.temple.colorshowingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
+import java.lang.reflect.Field;
+
 public class GridFragment extends Fragment {
+
+    private GridFragmentListener listener;
+
+    public interface GridFragmentListener{
+        void onDataSent(String Str, int Int);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        String[] colourStr = new String[9];
-        colourStr[0] = "Red";
-        colourStr[1] = "Yellow";
-        colourStr[2] = "Cyan";
-        colourStr[3] = "Light Gray";
-        colourStr[4] = "Magenta";
-        colourStr[5] = "Silver";
-        colourStr[6] = "Blue";
-        colourStr[7] = "Green";
-        colourStr[8] = "Dark Gray";
+        final String[] colourStr = new String[9];
+        colourStr[0] = getString(R.string.red);
+        colourStr[1] = getString(R.string.yellow);
+        colourStr[2] = getString(R.string.aqua);
+        colourStr[3] = getString(R.string.lightGray);
+        colourStr[4] = getString(R.string.magenta);
+        colourStr[5] = getString(R.string.silver);
+        colourStr[6] = getString(R.string.blue);
+        colourStr[7] = getString(R.string.green);
+        colourStr[8] = getString(R.string.darkGray);
 
-        int[] colourInt = new int[9];
+        final int[] colourInt = new int[9];
 
         colourInt[0] = Color.RED;
         colourInt[1] = Color.YELLOW;
@@ -44,6 +55,31 @@ public class GridFragment extends Fragment {
         final GridAdapter adapter = new GridAdapter(this.getContext(), colourStr, colourInt);
         gridView.setAdapter(adapter);
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String toSentStr = colourStr[i];
+                int toSentInt = colourInt[i];
+                listener.onDataSent(toSentStr, toSentInt);
+            }
+        });
+
         return view;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof GridFragmentListener){
+            listener = (GridFragmentListener) context;
+        }else{
+            throw new RuntimeException(context.toString() + " Error");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }

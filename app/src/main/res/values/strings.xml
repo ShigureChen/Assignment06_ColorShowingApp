@@ -1,5 +1,14 @@
 <resources>
-    <string name="app_name">ColorShowingApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Color Showing App with Japanese</string>
+    <string name="app_message">Please select a color</string>
+
+    <string name="red">Red</string>
+    <string name="yellow">Yellow</string>
+    <string name="aqua">Aqua</string>
+    <string name="lightGray">Light Gray</string>
+    <string name="magenta">Magenta</string>
+    <string name="silver">Silver</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="darkGray">Dark Gray</string>
 </resources>

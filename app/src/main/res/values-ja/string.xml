@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">色を示するアプリ(日本語ver.)</string>
+    <string name="app_message">色を選んでください</string>
+
+    <string name="red">赤</string>
+    <string name="yellow">黄</string>
+    <string name="aqua">アクア</string>
+    <string name="lightGray">ライトグレー</string>
+    <string name="magenta">マゼンタ</string>
+    <string name="silver">シルバー（銀）</string>
+    <string name="blue">青</string>
+    <string name="green">緑</string>
+    <string name="darkGray">ダークグレー</string>
+</resources>
