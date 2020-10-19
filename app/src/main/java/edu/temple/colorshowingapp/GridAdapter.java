@@ -39,7 +39,7 @@ public class GridAdapter extends BaseAdapter
         TextView textView = new TextView(context);
         textView.setText(colourStr[position]);
         textView.setPadding(5, 5, 5, 5);
-        textView.setTextSize(22);
+        textView.setTextSize(18);
         textView.setTextColor(Color.BLACK);
         textView.setBackgroundColor(colourInt[position]);
         textView.setHeight(220);

@@ -13,26 +13,29 @@ import android.widget.TextView;
 
 public class ColorFragment extends Fragment {
 
-    private String colourStr;
-    private int colourInt;
-
-    public void getBundle(Bundle bundle)
-    {
-        colourStr = bundle.getString("String");
-        colourInt = bundle.getInt("Integer");
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_color, container, false);
-        view.setBackgroundColor(colourInt);
-        TextView textView = (TextView) view.findViewById(R.id.textView2);
-        textView.setText(colourStr);
+        TextView textView = view.findViewById(R.id.textView2);
+        Bundle bundle = getArguments();
+        if(bundle != null)
+        {
+            String colourStr = bundle.getString("String");
+            int colourInt = bundle.getInt("Integer");
+
+            textView.setText(colourStr);
+            view.setBackgroundColor(colourInt);
+        }
+
+        else
+        {
+            textView.setText(R.string.color_fragment_message);
+            view.setBackgroundColor(1);
+        }
+
         return view;
     }
-
-
 
     @Override
     public void onAttach(@NonNull Context context) {

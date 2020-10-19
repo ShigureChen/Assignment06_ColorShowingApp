@@ -24,8 +24,8 @@
     <fragment
         android:id="@+id/gridContainer"
         android:name="edu.temple.colorshowingapp.GridFragment"
-        android:layout_width="366dp"
-        android:layout_height="302dp"
+        android:layout_width="362dp"
+        android:layout_height="266dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="16dp"
@@ -34,16 +34,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout="@layout/fragment_grid" />
 
     <fragment
         android:id="@+id/colorContainer"
         android:name="edu.temple.colorshowingapp.ColorFragment"
-        android:layout_width="370dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="357dp"
+        android:layout_height="286dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_color" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

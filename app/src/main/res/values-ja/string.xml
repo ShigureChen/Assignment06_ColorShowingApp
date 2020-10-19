@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">色を示するアプリ(日本語ver.)</string>
     <string name="app_message">色を選んでください</string>
+    <string name="color_fragment_message">選んだ色はここで表示されます</string>
 
     <string name="red">赤</string>
     <string name="yellow">黄</string>

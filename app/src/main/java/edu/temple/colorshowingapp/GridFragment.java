@@ -1,7 +1,6 @@
 package edu.temple.colorshowingapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,14 +13,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import java.lang.reflect.Field;
-
 public class GridFragment extends Fragment {
 
     private GridFragmentListener listener;
 
     public interface GridFragmentListener{
-        void onDataSent(String Str, int Int);
+        void onDataSent(String string, int integer);
     }
 
     @Override
@@ -51,16 +48,15 @@ public class GridFragment extends Fragment {
         colourInt[7] = Color.GREEN;
         colourInt[8] = Color.DKGRAY;
         View view = inflater.inflate(R.layout.fragment_grid, container, false);
-        GridView gridView = (GridView)view.findViewById(R.id.gridView);
+        GridView gridView = view.findViewById(R.id.gridView);
         final GridAdapter adapter = new GridAdapter(this.getContext(), colourStr, colourInt);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String toSentStr = colourStr[i];
-                int toSentInt = colourInt[i];
-                listener.onDataSent(toSentStr, toSentInt);
+
+                listener.onDataSent(colourStr[i], colourInt[i]);
             }
         });
 
