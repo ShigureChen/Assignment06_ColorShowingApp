@@ -8,27 +8,20 @@ Refactoring your last app to use a single activity along with 2 Fragments instea
 This application has two fragments. One show gridView and the other one shows textView. Once the user select an item in the gridView, the other fragment will display the color and the name of the color.
 
 <img src="Images/Japanese1.png" width="20%" />
-![](Images/Japanese1.png)
 
 <img src="Images/Japanese2.png" width="20%" />
-![](Images/Japanese2.png)
 
 <img src="Images/Japanese3.png" width="20%" />
-![](Images/Japanese3.png)
 
 <img src="Images/Japanese4.png" width="20%" />
-![](Images/Japanese4.png)
 
 As the instruction mentioned, this application supports alternate languages **but it needs to be restarted to apply the setting.**
 
 <img src="Images/Japanese5.png" width="20%" />
-![](Images/Japanese5.png)
 
 <img src="Images/Japanese5.png" width="20%" />
-![](Images/Japanese6.png)
 
 <img src="Images/Japanese5.png" width="20%" />
-![](Images/Japanese7.png)
 
 
 
