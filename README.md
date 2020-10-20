@@ -19,9 +19,9 @@ As the instruction mentioned, this application supports alternate languages **bu
 
 <img src="Images/Japanese5.png" width="20%" />
 
-<img src="Images/Japanese5.png" width="20%" />
+<img src="Images/Japanese6.png" width="20%" />
 
-<img src="Images/Japanese5.png" width="20%" />
+<img src="Images/Japanese7.png" width="20%" />
 
 
 
